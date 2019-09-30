@@ -124,9 +124,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="missile.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="textBasedGame.h" />
+    <ClInclude Include="Coordinates.h" />
+    <ClInclude Include="missile.h" />
+    <ClInclude Include="Target.h" />
+    <ClInclude Include="warhead.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
