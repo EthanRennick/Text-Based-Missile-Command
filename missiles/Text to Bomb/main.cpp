@@ -41,16 +41,32 @@ int play()
 
 	if (warHeadNum == 1)
 	{
-		weapon.warheadType.EXPLOSIVE;
+		weapon.warheadType.EXPLOSIVE; 
+		weapon.warheadType.explos = true;
+		 weapon.warheadType.nuclear = false;
+		 weapon.warheadType.smol = false;
+
+
 	}
 	else if (warHeadNum == 2)
 	{
 		weapon.warheadType.NUCLEAR;
+		weapon.warheadType.explos = false;
+		weapon.warheadType.nuclear = true;
+		weapon.warheadType.smol = false;
+
+
 	}
 	else if (warHeadNum == 3)
 	{
 		weapon.warheadType.SMOL;
+		weapon.warheadType.explos = false;
+		weapon.warheadType.nuclear = false;
+		weapon.warheadType.smol = true;
+
+
 	}
+	weapon.targetType.printHealth();
 
 	std::cout << "Please enter a target for the missile. The target is hiding at the Answer to the Ultimate Question of Life,\n the Universe, and Everything TM. \n";
 	std::cout << "Enter the x coordinate:  ";
@@ -92,46 +108,55 @@ int play()
 	std::cout << "Missile Collission! \n";
 	std::cout << "The missile hit your coordinates. \n";
 
-	if (weapon.coordinateTarget.x == 4 && weapon.coordinateTarget.y == 2 && weapon.warheadType.EXPLOSIVE)
+	if (weapon.coordinateTarget.x == 4 && weapon.coordinateTarget.y == 2 && weapon.warheadType.explos==true)
 	{
 		std::cout << "You hit the enemy HQ with the explosive warhead! \n";
 		weapon.targetType.hqHealth -=  1;
 		weapon.targetType.printHealth();
 	}
-	else if (weapon.coordinateTarget.x == 4 && weapon.coordinateTarget.y == 2 && weapon.warheadType.NUCLEAR)
+	else if (weapon.coordinateTarget.x == 4 && weapon.coordinateTarget.y == 2 && weapon.warheadType.smol ==true)
+	{
+		std::cout << "You hit the enemy HQ with the SMOL goth gf warhead uwu *nuzzles you* *pounces on enemy* \n";
+		weapon.targetType.printHealth();
+		std::cout << "Target is unaffected by her OWOs. ( those fiendish e-boys :c ) \n";
+	}
+	else if (weapon.coordinateTarget.x == 4 && weapon.coordinateTarget.y == 2 && weapon.warheadType.nuclear==true)
 	{
 		std::cout << "You hit the enemy HQ with the nuclear warhead! \n";
 		weapon.targetType.hqHealth -= 2;
 		weapon.targetType.printHealth();
 		std::cout << "Target obliterated.";
 	}
-	else if (weapon.coordinateTarget.x == 4 && weapon.coordinateTarget.y == 2 && weapon.warheadType.SMOL)
-	{
-		std::cout << "You hit the enemy HQ with the SMOL goth gf warhead uwu *nuzzles you* *pounces on enemy* \n";
-		weapon.targetType.printHealth();
-		std::cout << "Target is unaffected by her OWOs. ( those fiendish e-boys :c ) \n";
-	}
-	else if (weapon.coordinateTarget.x == 6 && weapon.coordinateTarget.y == 9 && weapon.warheadType.EXPLOSIVE)
+	else if (weapon.coordinateTarget.x == 6 && weapon.coordinateTarget.y == 9 && weapon.warheadType.explos==true)
 	{
 		std::cout << "You hit the enemy factory with the explosive warhead! \n";
 		weapon.targetType.factoryHealth -= 1;
 		weapon.targetType.printHealth();
 		std::cout << "Got 'em, coach.\n";
 	}
-	else if (weapon.coordinateTarget.x == 6 && weapon.coordinateTarget.y == 9 && weapon.warheadType.NUCLEAR)
+	else if (weapon.coordinateTarget.x == 6 && weapon.coordinateTarget.y == 9 && weapon.warheadType.nuclear==true)
 	{
 		std::cout << "You hit the enemy factory with the nuclear warhead! \n";
 		weapon.targetType.factoryHealth -= 2;
 		weapon.targetType.printHealth();
 		std::cout << "Blamo! \n";
 	}
-	else if (weapon.coordinateTarget.x == 6 && weapon.coordinateTarget.y == 9 && weapon.warheadType.SMOL)
+	else if (weapon.coordinateTarget.x == 6 && weapon.coordinateTarget.y == 9 && weapon.warheadType.smol==true)
 	{
 		std::cout << "You hit the enemy factory with the smol waifu warhead! \n";
 		std::cout << "The workers are distracted! \n";
 		weapon.targetType.factoryHealth = 0;
 		weapon.targetType.printHealth();
 	}
+	else if ((weapon.coordinateTarget.x != 6 && weapon.coordinateTarget.y != 9) || (weapon.coordinateTarget.x != 4 && weapon.coordinateTarget.y != 2))
+	{
+		std::cout << "Commandant - no points. :( \n";
+		std::cout << "Our missile failed to hit a target \n";
+		weapon.targetType.printHealth();
+	}
+	weapon.warheadType.explos == false;
+	weapon.warheadType.nuclear == false;
+	weapon.warheadType.smol == false;
 
 	weapon.amountOfWarheads -= 1;
 	std::cout << "You have " << weapon.amountOfWarheads << " remaing. \n";
