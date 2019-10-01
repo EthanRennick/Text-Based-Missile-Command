@@ -1,5 +1,5 @@
 ﻿  main.cpp
-C:\Users\c00240102\Desktop\Text-Based-Missile-Command\missiles\Text to Bomb\main.cpp(157,28): warning C4553:  '==': result of expression not used; did you intend '='?
-C:\Users\c00240102\Desktop\Text-Based-Missile-Command\missiles\Text to Bomb\main.cpp(158,29): warning C4553:  '==': result of expression not used; did you intend '='?
-C:\Users\c00240102\Desktop\Text-Based-Missile-Command\missiles\Text to Bomb\main.cpp(159,26): warning C4553:  '==': result of expression not used; did you intend '='?
+C:\Users\c00240102\Desktop\Text-Based-Missile-Command\missiles\Text to Bomb\main.cpp(161,28): warning C4553:  '==': result of expression not used; did you intend '='?
+C:\Users\c00240102\Desktop\Text-Based-Missile-Command\missiles\Text to Bomb\main.cpp(162,29): warning C4553:  '==': result of expression not used; did you intend '='?
+C:\Users\c00240102\Desktop\Text-Based-Missile-Command\missiles\Text to Bomb\main.cpp(163,26): warning C4553:  '==': result of expression not used; did you intend '='?
   Text to Bomb.vcxproj -> C:\Users\c00240102\Desktop\Text-Based-Missile-Command\missiles\Text to Bomb\Debug\Text to Bomb.exe

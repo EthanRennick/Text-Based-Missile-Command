@@ -28,6 +28,10 @@ Missile weapon;
 
 bool coordIncrease();
 
+void end()
+{
+
+};
 
 int play()
 {
@@ -206,7 +210,7 @@ int main()
 		//play the main game function
 		while(play() == 1)
 		{
-			play();
+			end();
 		}
 	}
 	else
